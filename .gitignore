@@ -1,0 +1,26 @@
+.venv/
+__pycache__/
+*.py[cod]
+node_modules/
+.env
+.DS_Store
+Thumbs.db
+
+# User footage, generated transcripts, and generated plans are private/project data.
+input/raw_video/*
+!input/raw_video/README.md
+project/transcript.json
+project/transcript.srt
+project/scenes.json
+public/media/*
+!public/media/.gitkeep
+assets/*
+!assets/README.md
+!assets/logos/
+!assets/references/
+assets/logos/*
+!assets/logos/README.md
+assets/references/*
+!assets/references/README.md
+output/*
+!output/.gitkeep

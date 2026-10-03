@@ -1,0 +1,24 @@
+{
+  "name": "talking-head-remotion-editor",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A local-first, human-reviewed Remotion workflow for talking-head video edits.",
+  "scripts": {
+    "studio": "remotion studio src/index.ts",
+    "dev": "remotion studio src/index.ts",
+    "typecheck": "tsc --noEmit",
+    "render": "remotion render src/index.ts TalkingHead output/talking-head-final.mp4"
+  },
+  "dependencies": {
+    "@remotion/cli": "^4.0.455",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "react": "^19.2.5",
+    "react-dom": "^19.2.5",
+    "remotion": "^4.0.455",
+    "zod": "4.5.4"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.3"
+  }
+}
