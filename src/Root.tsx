@@ -8,8 +8,8 @@ const defaultProps: TalkingHeadProps = {
   sourceVideo: "",
   durationSeconds: 60,
   showCaptions: false,
-  captions: [],
   scenes: [],
+  captions: [],
   theme: {
     background: "#101820",
     surface: "#1B2833",
@@ -18,6 +18,7 @@ const defaultProps: TalkingHeadProps = {
     text: "#F5F7FA",
     mutedText: "#B8C1CC",
     fontFamily: "Arial, sans-serif",
+    displayFontFamily: "Georgia, 'Times New Roman', serif",
   },
 };
 

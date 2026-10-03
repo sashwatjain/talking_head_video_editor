@@ -87,13 +87,15 @@ Validation checks the approval flags, JSON structure, and time ranges. It does n
 
 ### 3. Build and review the edit
 
-Use the reviewed transcript, scene plan, theme, brief, and user assets to build the edit in `src/`. Follow [`skill.md`](skill.md), especially the human checkpoints and Remotion rendering rules.
+After reviewing the transcript and scene plan, build the composition using the approved content. Keep generated copy and project-specific visual choices out of reusable components.
 
 ```powershell
 npm run studio
 ```
 
-The starter composition opens without requiring a source file. Set `sourceVideo` to a file in `public/` (copy only the needed runtime asset from `input/raw_video/`), set `durationSeconds` to the real clip duration, and load approved captions/scenes in the working composition. Remotion assets referenced with `staticFile()` must be inside `public/`.
+The `TalkingHead` starter composition opens without a source file. Copy the chosen source media into `public/`, then set `sourceVideo`, `durationSeconds`, the approved captions/scenes, and the selected theme in `src/Root.tsx`. Remotion assets referenced with `staticFile()` must be inside `public/`.
+
+For a scene that benefits from visual explanation, set its `presentation` to `split-video-left` or `split-video-right`. The speaker video animates into a one-third panel; the graphic uses the remaining two-thirds, then the layout returns to full-frame when the scene ends. Use `kind: "flowchart"` with `items` and `flow: "sequence"` or `"branches"` to explain steps or relationships. Keep other scenes full-frame by default, and place captions where they remain readable without competing with the graphic.
 
 Make edits, then leave Studio open for the user to review and request changes. Do not render until they explicitly approve.
 

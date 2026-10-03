@@ -1,52 +1,48 @@
-# Theme and visual system
-
-This file is the source of truth for the video's visual identity. Replace the prompts below with user-confirmed details. If generated from a reference image, label uncertain inferences and have the user verify them.
+# Theme and visual system template
 
 ## Brand
 
-- Brand / channel:
-- One-sentence visual direction:
-- Intended audience:
-- Reference image or website:
+- **Brand name and audience:**
+- **Existing brand guidance/assets:**
+- **Visual tone:**
 
 ## Color palette
 
-| Role | Color | Use |
+| Role | HEX | Use |
 |---|---|---|
-| Background | `#101820` | Main backdrop |
-| Surface | `#1B2833` | Cards and panels |
-| Primary | `#65D6C4` | Key emphasis |
-| Secondary | `#F3B562` | Secondary emphasis |
-| Text | `#F5F7FA` | Primary text |
-| Muted text | `#B8C1CC` | Supporting text |
+| Background | | |
+| Surface | | |
+| Primary accent | | |
+| Secondary accent | | |
+| Text | | |
+| Muted text | | |
+
+Record whether colors are confirmed brand values or estimates from a supplied reference. Do not present inferred colors, logos, or other model-generated details as confirmed facts.
 
 ## Typography
 
-- Heading font:
-- Body / caption font:
-- Fallback fonts:
-- Type scale / weights:
+- **Display font and licence:**
+- **Body/UI font and licence:**
+- **Fallbacks:**
 
 ## Layout and motion
 
-- Aspect ratio / resolution:
-- Safe margins:
-- Speaker framing:
-- Graphic placement:
-- Motion style:
-- Caption style:
-- Transitions:
+- Confirm the target aspect ratio and platform safe areas before designing.
+- Keep captions readable against every shot; use plain text with a subtle shadow or an approved contrast treatment.
+- Keep graphics concise and secondary to the speaker.
+- Use deterministic, restrained motion and leave enough time to read each graphic.
+- Use split-screen selectively when a spoken section benefits from an explanation graphic. A useful starting layout is a one-third video panel and a two-thirds information panel. The speaker can slide to either side, with the graphic in the other panel; return to full-frame when the explanation ends.
+- Preserve important facial framing when the video panel narrows; check crop, captions, and text safe areas in Studio.
 
 ## Assets and restrictions
 
-- Logo file(s) and allowed variants:
-- Icon / illustration style:
-- Approved music / sound:
-- Do not use:
-- User-confirmed facts vs. visual inferences:
+- Use only supplied or appropriately licensed logos, images, fonts, music, and other assets.
+- Keep the original video unchanged; place runtime copies under `public/`.
+- Do not invent factual claims, statistics, chart data, or brand details.
+- Prefer reusable, typed Remotion components for repeated titles, captions, lower thirds, charts, and explainer diagrams.
 
-## Approval
+## Review
 
-- Reviewed by:
-- Date:
-- Open questions:
+- **Reviewer:**
+- **Date:**
+- **Confirmed choices and remaining questions:**

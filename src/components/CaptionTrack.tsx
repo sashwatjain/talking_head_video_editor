@@ -1,24 +1,29 @@
-import {AbsoluteFill} from "remotion";
+import {AbsoluteFill, interpolate} from "remotion";
+import type {Caption} from "@remotion/captions";
+import type {RootShape} from "../Root.types";
 
-type Caption = {
-  startMs: number;
-  endMs: number;
-  text: string;
-};
+type SplitPresentation = RootShape["scenes"][number]["presentation"];
 
 type Props = {
   captions: Caption[];
   theme: {
-    surface: string;
-    primary: string;
     text: string;
     fontFamily: string;
   };
   fps: number;
   frame: number;
+  splitPresentation: SplitPresentation;
+  splitProgress: number;
 };
 
-export const CaptionTrack: React.FC<Props> = ({captions, theme, fps, frame}) => {
+export const CaptionTrack: React.FC<Props> = ({
+  captions,
+  theme,
+  fps,
+  frame,
+  splitPresentation,
+  splitProgress,
+}) => {
   const timeMs = (frame / fps) * 1000;
   const active = captions.find((caption) => timeMs >= caption.startMs && timeMs < caption.endMs);
 
@@ -26,22 +31,27 @@ export const CaptionTrack: React.FC<Props> = ({captions, theme, fps, frame}) => 
     return null;
   }
 
+  const targetLeft = splitPresentation === "split-video-left" ? 38 : 7;
+  const captionWidth = interpolate(splitProgress, [0, 1], [76, 55]);
+  const captionLeft = interpolate(splitProgress, [0, 1], [12, targetLeft]);
+
   return (
-    <AbsoluteFill style={{justifyContent: "flex-end", alignItems: "center", padding: "0 9% 8%"}}>
+    <AbsoluteFill>
       <div
         style={{
-          maxWidth: "82%",
-          padding: "16px 28px",
-          borderRadius: 14,
-          backgroundColor: theme.surface,
+          maxWidth: `${captionWidth}%`,
+          width: `${captionWidth}%`,
+          position: "absolute",
+          left: `${captionLeft}%`,
+          bottom: "8%",
           color: theme.text,
-          borderBottom: `4px solid ${theme.primary}`,
           fontFamily: theme.fontFamily,
-          fontSize: 36,
-          fontWeight: 700,
-          lineHeight: 1.25,
+          fontSize: 28,
+          fontWeight: 600,
+          lineHeight: 1.3,
           textAlign: "center",
-          textShadow: "0 2px 10px rgba(0,0,0,0.45)",
+          textShadow: "0 2px 5px rgba(0,0,0,0.95), 0 0 12px rgba(0,0,0,0.7)",
+          boxSizing: "border-box",
         }}
       >
         {active.text}

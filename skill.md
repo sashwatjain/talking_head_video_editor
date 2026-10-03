@@ -44,6 +44,9 @@ Keep scenes contiguous unless the edit intentionally removes a time range. Avoid
 - Use `Sequence` for timeline elements, set durations explicitly, and use `staticFile()` for local assets in `public/`. Check aspect ratio, framing, audio, captions, and timing in Studio.
 - Captions must use the human-approved transcript timings. Keep readable contrast and safe margins. Do not add captions if the user declines them.
 - Prefer restrained motion, clear hierarchy, legible typography, and a small number of purposeful visual treatments. Match colors and fonts to `project/theme.md`.
+- Use split-screen selectively when a passage is clearer with a diagram, steps, comparison, or other supporting information. Keep other dialogue full-frame. A one-third video / two-thirds graphic split is a useful starting point, not a mandatory ratio; place the video on the side that preserves the speaker's framing and balances the graphic.
+- Animate into the split with deterministic easing, keep text and captions inside the panel's safe area, and return to full-frame at the end of the explanatory scene. Check the crop and transition endpoints at the scene's first and last frames in Studio or with still renders.
+- Use the reusable `flowchart` scene kind for sequence or branch diagrams. Populate its labels only from approved material and keep each node concise. Choose the full-frame or split-screen presentation per scene rather than applying split layout continuously.
 - Charts must show only user-provided or otherwise verified data. Make chart values, labels, units, and source clear; never infer quantitative values from speech.
 - Keep files modular and typed. Add new dependencies only when necessary. Do not modify original input files or render as a substitute for review.
 

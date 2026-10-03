@@ -100,10 +100,13 @@ def make_scenes(segments: list[dict[str, Any]], max_seconds: float) -> list[dict
                     "headline": "",
                     "body": "",
                     "values": [],
+                    "items": [],
+                    "flow": "sequence",
                     "placement": "safe area",
                     "motion": "subtle fade; keep the speaker primary",
                     "idea": visual_idea,
                 },
+                "presentation": "full",
                 "notes": "Draft split from word timing when available. No data values are inferred; verify all graphics against the video and user brief.",
             }
         )

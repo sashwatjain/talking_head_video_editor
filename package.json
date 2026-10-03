@@ -10,6 +10,7 @@
     "render": "remotion render src/index.ts TalkingHead output/talking-head-final.mp4"
   },
   "dependencies": {
+    "@remotion/captions": "4.0.532",
     "@remotion/cli": "^4.0.455",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",

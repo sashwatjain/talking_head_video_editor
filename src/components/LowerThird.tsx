@@ -7,22 +7,25 @@ type Props = {
     text: string;
     mutedText: string;
     fontFamily: string;
+    displayFontFamily: string;
   };
 };
 
 export const LowerThird: React.FC<Props> = ({headline, body, theme}) => (
   <div
     style={{
-      maxWidth: 820,
-      padding: "22px 30px",
-      borderLeft: `7px solid ${theme.primary}`,
-      borderRadius: "0 16px 16px 0",
+      maxWidth: 600,
+      padding: "18px 24px",
+      borderLeft: `4px solid ${theme.primary}`,
+      borderRadius: "0 12px 12px 0",
       backgroundColor: theme.surface,
-      boxShadow: "0 12px 36px rgba(0,0,0,0.3)",
+      boxShadow: "0 12px 32px rgba(9,16,31,0.25)",
       fontFamily: theme.fontFamily,
     }}
   >
-    <div style={{color: theme.text, fontSize: 34, fontWeight: 700}}>{headline}</div>
-    {body && <div style={{color: theme.mutedText, fontSize: 23, marginTop: 6}}>{body}</div>}
+    <div style={{color: theme.text, fontFamily: theme.displayFontFamily, fontSize: 31, lineHeight: 1.15}}>
+      {headline}
+    </div>
+    {body && <div style={{color: theme.mutedText, fontSize: 19, lineHeight: 1.35, marginTop: 6}}>{body}</div>}
   </div>
 );
